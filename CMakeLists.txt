@@ -41,7 +41,7 @@ project(atomicdex-desktop LANGUAGES CXX VERSION 0.4.0)
 message(STATUS "${PROJECT_NAME} is version ${PROJECT_VERSION}")
 
 if (UNIX)
-    execute_process(COMMAND bash -c "git ls-remote https://github.com/KomodoPlatform/atomicdex-desktop-generics refs/heads/main | cut -f 1 | tr -d '\n'"
+    execute_process(COMMAND bash -c "git ls-remote https://github.com/BeanieDex/atomicdex-desktop-generics refs/heads/main | cut -f 1 | tr -d '\n'"
             OUTPUT_VARIABLE GENERICS_VERSION_ID
             )
     if (NOT EXISTS ${GENERICS_VERSION_ID}.cfg_hash)
@@ -106,22 +106,22 @@ endif ()
 ##! We fetch our dependencies
 if (APPLE)
     FetchContent_Declare(mm2
-            URL https://github.com/KomodoPlatform/atomicDEX-API/releases/download/beta-2.1.2940/mm2-3cc42ed43-Darwin-Release.zip)
+            URL https://github.com/BeanieDex/atomicDEX-API/releases/download/beta-2.1.2940/mm2-3cc42ed43-Darwin-Release.zip)
 elseif (UNIX AND NOT APPLE)
     FetchContent_Declare(mm2
-            URL https://github.com/KomodoPlatform/atomicDEX-API/releases/download/beta-2.1.2940/mm2-3cc42ed43-Linux-Release.zip)
+            URL https://github.com/BeanieDex/atomicDEX-API/releases/download/beta-2.1.2940/mm2-3cc42ed43-Linux-Release.zip)
 else ()
     FetchContent_Declare(mm2
-            URL https://github.com/KomodoPlatform/atomicDEX-API/releases/download/beta-2.1.2940/mm2-3cc42ed43-Windows_NT-Release.zip)
+            URL https://github.com/BeanieDex/atomicDEX-API/releases/download/beta-2.1.2940/mm2-3cc42ed43-Windows_NT-Release.zip)
 endif ()
 
-FetchContent_Declare(qmaterial URL https://github.com/KomodoPlatform/Qaterial/archive/master.zip)
+FetchContent_Declare(qmaterial URL https://github.com/BeanieDex/Qaterial/archive/master.zip)
 
 FetchContent_Declare(jl777-coins
-        URL https://github.com/KomodoPlatform/coins/archive/master.zip)
+        URL https://github.com/BeanieDex/coins/archive/master.zip)
 
 FetchContent_Declare(adex-generics-coins
-        URL https://github.com/KomodoPlatform/atomicdex-desktop-generics/archive/main.zip)
+        URL https://github.com/BeanieDex/atomicdex-desktop-generics/archive/main.zip)
 
 FetchContent_MakeAvailable(mm2 jl777-coins qmaterial adex-generics-coins)
 
